@@ -8,12 +8,20 @@ class TestItem extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      inputValue: 12
+      inputValue: this.props.option.question
     }
   }
 
   handleChange (e) {
     this.setState({inputValue: e.target.value})
+  }
+
+  saveData(){
+    console.log(this.props.option)
+  }
+
+  removeItem(){
+    console.log(this.props.index)
   }
 
   render () {
@@ -47,8 +55,8 @@ class TestItem extends Component {
           <label className="label">D：</label>
           <input className="input"/>
         </div>
-        <button className="button">保存</button>
-        <button className="button">移除</button>
+        <button className="button" onClick={this.saveData.bind(this)}>保存</button>
+        <button className="button" onClick={this.removeItem.bind(this)}>移除</button>
 
       </div>
     )

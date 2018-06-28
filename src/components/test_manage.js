@@ -24,7 +24,7 @@ class TestManage extends Component {
         <h1 className="App-title">{this.state.title}</h1>
         <div className="test_ul">
           {this.state.testArr.map((item, index) => {
-            return (<TestItem option={item} key={index}></TestItem>)
+            return (<TestItem option={item} index={index} key={index}></TestItem>)
           })}
         </div>
       </div>
