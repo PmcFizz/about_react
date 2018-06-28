@@ -8,7 +8,8 @@ class TestItem extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      inputValue: this.props.option.question
+      inputValue: this.props.option.question,
+      answer:'A'
     }
   }
 
@@ -17,11 +18,14 @@ class TestItem extends Component {
   }
 
   saveData(){
-    console.log(this.props.option)
+    this.props.handleSaveData(99)
   }
 
   removeItem(){
-    console.log(this.props.index)
+    this.props.handleRemoveData(this.props.index)
+  }
+  changeRadio(){
+
   }
 
   render () {
@@ -33,27 +37,27 @@ class TestItem extends Component {
         </div>
         <div className="form_item">
           <span className="label">答案：</span>
-          <label className="answer_radio"><input type="radio" name="answer" className="input"/>A</label>
-          <label className="answer_radio"><input type="radio" name="answer" className="input"/>B</label>
-          <label className="answer_radio"><input type="radio" name="answer" className="input"/>C</label>
-          <label className="answer_radio"><input type="radio" name="answer" className="input"/>D</label>
+          <label className="answer_radio"><input type="radio"  value="A" onChange={this.changeRadio.bind(this)} checked={this.props.option.answer === 'A' ? true : false} name={this.props.index+'answer'} className="input"/>A</label>
+          <label className="answer_radio"><input type="radio"  value="B" onChange={this.changeRadio.bind(this)} checked={this.props.option.answer === 'B' ? true : false} name={this.props.index+'answer'} className="input"/>B</label>
+          <label className="answer_radio"><input type="radio"  value="C" onChange={this.changeRadio.bind(this)} checked={this.props.option.answer === 'C' ? true : false} name={this.props.index+'answer'} className="input"/>C</label>
+          <label className="answer_radio"><input type="radio"  value="D" onChange={this.changeRadio.bind(this)} checked={this.props.option.answer === 'D' ? true : false} name={this.props.index+'answer'} className="input"/>D</label>
         </div>
 
         <div className="form_item">
           <label className="label">A：</label>
-          <input className="input"/>
+          <input className="input" defaultValue={this.props.option.A} />
         </div>
         <div className="form_item">
           <label className="label">B：</label>
-          <input className="input"/>
+          <input className="input" defaultValue={this.props.option.B}/>
         </div>
         <div className="form_item">
           <label className="label">C：</label>
-          <input className="input"/>
+          <input className="input" defaultValue={this.props.option.C}/>
         </div>
         <div className="form_item">
           <label className="label">D：</label>
-          <input className="input"/>
+          <input className="input" defaultValue={this.props.option.D}/>
         </div>
         <button className="button" onClick={this.saveData.bind(this)}>保存</button>
         <button className="button" onClick={this.removeItem.bind(this)}>移除</button>
