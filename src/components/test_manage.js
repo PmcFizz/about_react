@@ -23,10 +23,13 @@ class TestManage extends Component {
   }
 
   handleRemoveData (index) {
-    console.log(index)
-    let arr = this.state.testArr
-    arr.splice(index,1)
-    this.setState({testArr: arr})
+    let splArr = (arr, index) => {
+      arr.splice(index, 1)
+      return arr
+    }
+    this.setState(prevState => ({
+      testArr: splArr(prevState.testArr, index)
+    }))
   }
 
   render () {

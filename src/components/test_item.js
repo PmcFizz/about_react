@@ -33,7 +33,7 @@ class TestItem extends Component {
       <div className="test_item">
         <div className="form_item">
           <label className="label">问题： </label>
-          <input className="input" value={this.state.inputValue} onChange={this.handleChange.bind(this)}/>
+          <input className="input"  defaultValue={this.props.option.question} onChange={this.handleChange.bind(this)}/>
         </div>
         <div className="form_item">
           <span className="label">答案：</span>
