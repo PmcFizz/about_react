@@ -8,8 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to about_react</h1>
+
+          <img src={logo} style={{display: "none"}} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome</h1>
         </header>
         <TestManage></TestManage>
       </div>

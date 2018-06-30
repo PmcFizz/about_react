@@ -12,9 +12,7 @@ class TestManage extends Component {
       title: 'My Title',
       testArr: [{question: '1', answer: 'A', A: '1', B: '2', C: '3', D: '4'},
         {question: '2', answer: 'B', A: '2', B: '3', C: '4', D: '5'},
-        {question: '3', answer: 'C', A: '3', B: '4', C: '5', D: '6'},
-        {question: '4', answer: 'D', A: '4', B: '5', C: '6', D: '7'},
-        {question: '5', answer: 'A', A: '5', B: '6', C: '7', D: '8'}]
+        {question: '3', answer: 'C', A: '3', B: '4', C: '5', D: '6'}]
     }
   }
 
@@ -23,8 +21,9 @@ class TestManage extends Component {
   }
 
   handleRemoveData (index) {
-    let splArr = (arr, index) => {
-      arr.splice(index, 1)
+    let splArr = (arr, i) => {
+      arr.splice(i, 1)
+      console.log(arr)
       return arr
     }
     this.setState(prevState => ({
@@ -40,7 +39,7 @@ class TestManage extends Component {
           {this.state.testArr.map((item, index) => {
             return (<TestItem handleSaveData={this.handleSaveData.bind(this)}
                               handleRemoveData={this.handleRemoveData.bind(this)}
-                              option={item} index={index} key={index}></TestItem>)
+                              option={item} index={index} key={item.question}></TestItem>)
           })}
         </div>
       </div>

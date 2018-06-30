@@ -25,12 +25,14 @@
 
 .button {
     display: inline-block;
-    background: #fff;
-    border: 1px solid #0366d6;
+    background: #385C98;
+    color: #fff;
+    border: 1px solid #385C98;
     margin-top: 10px;
     outline: none;
     cursor: pointer;
     border-radius: 2px;
+    padding: 2px 5px;
     margin-right: 10px;
 }
 
