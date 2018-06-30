@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 import '../style/test_manage.css'
 import TestItem from './test_item'
+import AddItem from './add_item'
 
 class TestManage extends Component {
   constructor (props) {
@@ -18,6 +19,12 @@ class TestManage extends Component {
 
   handleSaveData (index) {
     console.log('***' + index)
+  }
+
+  clickAddBtn () {
+    let arr = this.state.testArr.slice()
+    arr.push({question: +new Date(), answer: 'C', A: '3', B: '4', C: '5', D: '6'})
+    this.setState({testArr: arr})
   }
 
   handleRemoveData (index) {
@@ -41,6 +48,7 @@ class TestManage extends Component {
                               handleRemoveData={this.handleRemoveData.bind(this)}
                               option={item} index={index} key={item.question}></TestItem>)
           })}
+          <AddItem clickAddBtn={this.clickAddBtn.bind(this)}></AddItem>
         </div>
       </div>
     )

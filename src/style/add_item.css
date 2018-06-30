@@ -1,0 +1,10 @@
+.add_item {
+    width: 400px;
+    display: inline-block;
+    margin: 10px;
+    height: 267px;
+    border: 1px solid #C9E2FE;
+    border-radius: 2px;
+    padding: 10px 0;
+    text-align: center;
+}
